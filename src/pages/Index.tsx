@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
+  const navigate = useNavigate();
   const plans = [
     {
       name: "Free",
@@ -89,7 +91,7 @@ const Index = () => {
               <a href="#services" className="text-sm font-medium hover:text-primary transition-colors">Услуги</a>
               <a href="#contacts" className="text-sm font-medium hover:text-primary transition-colors">Контакты</a>
             </div>
-            <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 glow-primary">
+            <Button onClick={() => navigate('/login')} className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 glow-primary">
               Войти
             </Button>
           </div>
@@ -107,7 +109,7 @@ const Index = () => {
           Профессиональный хостинг для SAMP/CRMP серверов с автоустановкой модов, компиляцией и лаунчерами
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-8 glow-primary">
+          <Button onClick={() => navigate('/login')} size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-8 glow-primary">
             <Icon name="Rocket" className="mr-2" size={20} />
             Создать сервер
           </Button>
